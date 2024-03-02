@@ -1,10 +1,15 @@
 var axios = require('axios');
+
+const env = require('dotenv').config({path:"../../.env"})
+
 var data = JSON.stringify({
     "collection": "testdb",
     "database": "test",
     "dataSource": "Cluster0",
     "projection": {
-        "_id": 1
+        "_id": 0,
+        "id": 1,
+        "name": 1
     }
 });
             
@@ -14,7 +19,7 @@ var config = {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
-      'api-key': 'kVz72LAbbpOkIBtlKuRDQDQbiMGDHjpfkrPLrL94hY5rSk4tYUQxEFuWT04xeMHR',
+      'api-key': ProcessingInstruction.env.ATLAS_API,
     },
     data: data
 };
