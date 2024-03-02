@@ -19,7 +19,7 @@ var config = {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
-      'api-key': ProcessingInstruction.env.ATLAS_API,
+      'api-key': process.env.ATLAS_API,
     },
     data: data
 };
